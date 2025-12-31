@@ -1,3 +1,4 @@
+
 import { getGaminGlobalClient } from './garmin_global';
 import {
     AESKEY_DEFAULT,
@@ -76,7 +77,7 @@ export const migrateGarminCN2GarminGlobal = async (count = 200) => {
     const clientCN = await getGaminCNClient();
     const clientGlobal = await getGaminGlobalClient();
     
-    console.log("start from record:" + actIndex + "and totally:" + totalAct )
+    console.log("Start from record: " + actIndex + " and a total of: " + totalAct);
                 
     const actSlices = await clientCN.getActivities(actIndex, totalAct);
     // only running

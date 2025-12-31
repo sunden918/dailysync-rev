@@ -75,7 +75,9 @@ export const migrateGarminCN2GarminGlobal = async (count = 200) => {
 
     const clientCN = await getGaminCNClient();
     const clientGlobal = await getGaminGlobalClient();
-
+    
+    console.log("start from record:" + actIndex + "and totally:" + totalAct )
+                
     const actSlices = await clientCN.getActivities(actIndex, totalAct);
     // only running
     // const runningActs = _.filter(actSlices, { activityType: { typeKey: 'running' } });

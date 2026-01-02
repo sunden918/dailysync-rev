@@ -86,7 +86,7 @@ export const migrateGarminCN2GarminGlobal = async (count = 200) => {
     const runningActs = actSlices;
     for (let j = 0; j < runningActs.length; j++) {
         const act = runningActs[j];
-        //console.log({ act });
+        console.log({ act });
         // 下载佳明原始数据
         const filePath = await downloadGarminActivity(act.activityId, clientCN);
         // 上传到佳明国际区

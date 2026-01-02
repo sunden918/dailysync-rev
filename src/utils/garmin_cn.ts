@@ -86,11 +86,12 @@ export const migrateGarminCN2GarminGlobal = async (count = 200) => {
     const runningActs = actSlices;
     for (let j = 0; j < runningActs.length; j++) {
         const act = runningActs[j];
-        // console.log({ act });
+        console.log({ act });
         // 下载佳明原始数据
         const filePath = await downloadGarminActivity(act.activityId, clientCN);
         // 上传到佳明国际区
         console.log(`本次开始向国际区上传第 ${number2capital(j + 1)} 条数据，相对总数上传到 ${number2capital(j + 1 + actIndex)} 条，  【 ${act.activityName} 】，开始于 【 ${act.startTimeLocal} 】，活动ID: 【 ${act.activityId} 】`);
+        
         await uploadGarminActivity(filePath, clientGlobal);
         // await new Promise(resolve => setTimeout(resolve, 2000));
     }

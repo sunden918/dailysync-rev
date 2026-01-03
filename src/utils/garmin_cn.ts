@@ -114,7 +114,7 @@ export const syncGarminCN2GarminGlobal = async () => {
         let actualNewActivityCount = 1;
         for (let i = 0; i < cnActs.length; i++) {
             const cnAct = cnActs[i];
-            if （(cnAct.startTimeLocal > latestGlobalActStartTime) && (cnAct.activityType.typeId != 25)） {
+            if ( (cnAct.startTimeLocal > latestGlobalActStartTime) && (cnAct.activityType.typeId != 25) ) {
                 // 下载佳明原始数据 && skip indoor cycling
                 const filePath = await downloadGarminActivity(cnAct.activityId, clientCN);
                 // 上传到佳明国际区
